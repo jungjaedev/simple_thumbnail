@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a, a:active {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  position: relative;
+  background: #f4f4f4;
+  height: 100vh;
+  cursor: default;
+  padding: 4rem 8rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  color:#666666;
+  font-weight: bold;
+}
+
+img {
+  cursor: pointer;
+}
+
+button:hover {
+  color: #ffffff;
+  background-color: #4CAF50;
+  cursor: pointer;
+}
+
+
+/* container */
+
+.container {
+  margin: 0 auto;
+  padding: 2rem 5rem;
+  min-width: 768px;
+  height: 1024px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* header */
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #343A40;
+  font-weight: 800;
+}
+
+
+/* preview */
+
+.preview {
+  margin: 2rem auto;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #d4d4d4;
+}
+
+
+/* management */
+
+.management {
+  margin: 2rem 0;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  border: 1px solid #d4d4d4;
+  border-radius: 10px;
+  padding: 0 1rem;
+  margin: 1rem 0;
+  height: 2rem;
+  width: 30%;
+}
+
+.management__menu {
+  display: flex;
+  width: 100%;
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.management__menu__title {
+  width: 11rem;
+  margin: auto 0;
+  font-size: 1.2rem;
+}
+
+.btns {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.btn {
+  border: none;
+  background-color:#f4f4f4;
+  border-radius: 1rem;
+  color:#666666;
+  width: 8rem;
+  height: 2rem;
+  padding: 0 1rem;
+}
+
+.master_panel {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.master_panel__btn {
+  border: 1px solid #d4d4d4;
+  width: 8rem;
+  height: 2rem;
+  margin: 0 1.5rem;
+  border-radius: none;
+  color:#666666;
+  font-size: 1rem;
+}
+
+.save {
+  background-color: #888888;
+  color: #ffffff;
+}
+
+
+/* footer */
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  line-height: 3rem;
+  padding-top: 4rem;
+}
+
+.copyright__image {
+  width: 3rem;
+  height: 3rem;
+}
