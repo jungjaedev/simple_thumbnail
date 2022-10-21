@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
     <title>Simple Thumbnail</title>
   </head>
   <body>
@@ -14,16 +15,16 @@
       </header>
       <div class="preview">
         <ul class="content_list">
-          <li class="title"></li>
-          <li class="subtitle"></li>
-          <li class="subject"></li>
+          <li class="title">title</li>
+          <li class="subtitle">subtitle</li>
+          <li class="subject">subject</li>
         </ul>
       </div>
       <div class="management">
         <div class="inputs management__menu">
-          <input type="text" class="inputs__title" placeholder="> title" />
-          <input type="text" class="inputs__subtitle" placeholder="> subtitle" />
-          <input type="text" class="inputs__subject" placeholder="> subject" />
+          <input type="text" data-set="title" class="inputs__field inputs__title" placeholder="> title" />
+          <input type="text" data-set="subtitle" class="inputs__field inputs__subtitle" placeholder="> subtitle" />
+          <input type="text" data-set="subject" class="inputs__field inputs__subject" placeholder="> subject" />
         </div>
         <div class="background management__menu">
           <div class="background__text management__menu__title">text</div>
