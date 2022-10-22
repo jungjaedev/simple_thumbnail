@@ -100,7 +100,7 @@ fontBtn.forEach(e => {
   });
 });
 
-// font size
+// font color
 const ChangefontColor = event => {
   previewContent.forEach(e => {
     if (event.target.classList.contains('selected')) {
@@ -172,3 +172,104 @@ componentBtn.forEach(e => {
 });
 
 /** reset */
+const resetBtn = document.querySelector('.reset');
+const allBtns = document.querySelectorAll('.btn');
+
+const resetBackgroundColor = () => {
+  body.style.background = '#f4f4f4';
+  preview.style.background = '#d4d4d4';
+};
+
+const resetText = () => {
+  previewTitle.textContent = 'title';
+  previewSubtitle.textContent = 'subtitle';
+  previewSubject.textContent = 'subject';
+
+  inputsField.forEach(e => {
+    e.value = '';
+  });
+};
+
+const resetSeletedBtn = () => {
+  allBtns.forEach(e => {
+    e.classList.remove('selected');
+  });
+};
+
+const resetFontStyle = () => {
+  previewContent.forEach(e => {
+    e.style.textShadow = '';
+    e.style.color = '#ffffff';
+  });
+
+  previewSubtitle.style.borderTop = '1px solid #ffffff';
+  previewTitle.style.fontSize = '3.5rem';
+  previewSubtitle.style.fontSize = '1.5rem';
+  previewSubject.style.fontSize = '1.5rem';
+};
+
+const option3 = document.querySelector('.field_type__option3');
+
+const reset = () => {
+  resetBackgroundColor();
+  resetText();
+  resetSeletedBtn();
+  resetFontStyle();
+
+  option3.classList.add('selected');
+  previewSubtitle.style.opacity = 1;
+  previewSubject.style.opacity = 1;
+};
+
+resetBtn.addEventListener('click', reset);
+
+/* default */
+reset();
+
+/* github button */
+const githubBtn = document.querySelector('.copyright__image');
+
+const openGithub = () => {
+  window.open('https://github.com/jungjaedev/simple_thumbnail');
+};
+
+githubBtn.addEventListener('click', openGithub);
+
+/* save funciton */
+const saveBtn = document.querySelector('.save');
+const modal = document.querySelector('.modal');
+
+const captureExport = function () {
+  window.scrollTo(0, 0);
+  html2canvas(document.querySelector('#capture'), {
+    letterRendering: 1,
+    logging: true,
+    allowTaint: false,
+    scrollX: -window.scrollX,
+    scrollY: -window.scrollY,
+    windowWidth: document.documentElement.offsetWidth,
+    windowHeight: document.documentElement.offsetHeight,
+  }).then(canvas => {
+    let el = document.querySelector('#target');
+    el.href = canvas.toDataURL('image/jpeg');
+    el.download = 'thumbnail.jpg';
+    el.click();
+  });
+
+  modal.classList.remove('hidden');
+};
+
+saveBtn.addEventListener('click', captureExport);
+
+// close funciton
+// window.addEventListener('keydown', e => {
+//   if (e.key === 'Escape') {
+//     removeCapture();
+//   }
+// });
+
+// const removeCapture = function () {
+//   modal.removeChild(modal.firstElementChild);
+
+//   modal.forEach(e => e.classList.add('hidden'));
+// };

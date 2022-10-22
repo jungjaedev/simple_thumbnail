@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="app.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <script defer src="/path/to/html2canvas.min.js"></script>
     <title>Simple Thumbnail</title>
   </head>
   <body>
@@ -13,7 +15,7 @@
       <header>
         <h1>Simple Thumbnail</h1>
       </header>
-      <div class="preview">
+      <div id="capture" class="preview">
         <ul class="content_list">
           <li class="title preview_content">title</li>
           <li class="subtitle preview_content">subtitle</li>
@@ -60,5 +62,7 @@
         <div class="copyright__text">ⓒ Jung Jaewon</div>
       </footer>
     </section>
+    <div class="modal hidden"></div>
+    <a id="target" style="display: none"></a>
   </body>
 </html>
