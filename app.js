@@ -91,7 +91,6 @@ const previewContent = document.querySelectorAll('.preview_content');
 const fontShadowBtn = document.querySelector('.font__shadow');
 const fontColorBtn = document.querySelector('.font__color');
 const fontSizeBtn = document.querySelector('.font__size');
-const fontBtnsContainer = document.querySelector('.font_btns');
 const fontBtn = document.querySelectorAll('.font__btn');
 
 fontBtn.forEach(e => {
@@ -145,3 +144,31 @@ const ChangefontShadow = function (event) {
 };
 
 fontShadowBtn.addEventListener('click', ChangefontShadow);
+
+/** component options */
+const componentBtn = document.querySelectorAll('.component_optionBtn');
+
+const changComponentOption = function (e) {
+  if (e.target.classList.contains('field_type__option2')) {
+    previewSubtitle.style.opacity = 1;
+    previewSubject.style.opacity = 0;
+  } else if (e.target.classList.contains('field_type__option1')) {
+    previewSubtitle.style.opacity = 0;
+    previewSubject.style.opacity = 0;
+  } else if (e.target.classList.contains('field_type__option3')) {
+    previewSubtitle.style.opacity = 1;
+    previewSubject.style.opacity = 1;
+  }
+
+  componentBtn.forEach(e => {
+    e.classList.remove('selected');
+  });
+
+  e.target.classList.add('selected');
+};
+
+componentBtn.forEach(e => {
+  e.addEventListener('click', changComponentOption);
+});
+
+/** reset */
