@@ -16,12 +16,14 @@ a, a:active {
 body {
   position: relative;
   background: #f4f4f4;
-  height: 100vh;
+  margin: 0 auto;
+  height: 100%;
   cursor: default;
   padding: 4rem 8rem;
   font-family: 'Noto Sans KR', sans-serif;
   color:#666666;
   font-weight: bold;
+  max-width: 1024px;
 }
 
 img {
@@ -30,7 +32,7 @@ img {
 
 button:hover {
   color: #ffffff;
-  background-color: #4CAF50;
+  background-color: #555eff;
   cursor: pointer;
 }
 
@@ -41,7 +43,6 @@ button:hover {
   margin: 0 auto;
   padding: 2rem 5rem;
   min-width: 768px;
-  height: 1024px;
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
@@ -84,9 +85,10 @@ header h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3.5rem;
   font-weight: 500;
+  font-size: 3.5rem;
 }
+
 
 .subtitle {
   position: absolute;
@@ -94,7 +96,7 @@ header h1 {
   top: 62%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: 1.5rem;
   border-top: 1px solid #ffffff;
   padding-top: 5px;
 }
@@ -104,13 +106,13 @@ header h1 {
   top: 95%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 /* management */
 
 .management {
-  margin: 2rem 0;
+  margin: 2rem 0 0;
 }
 
 .inputs {
@@ -125,6 +127,11 @@ input {
   margin: 1rem 0;
   height: 2rem;
   width: 30%;
+}
+
+input::placeholder {
+  color: #d4d4d4;
+  font-style: italic;
 }
 
 .management__menu {
@@ -155,6 +162,12 @@ input {
   width: 8rem;
   height: 2rem;
   padding: 0 1rem;
+  transition: background-color 200ms ease, color 200ms ease, opacity 400ms ease, transform 400ms ease;
+}
+
+.selected {
+  background-color: #555eff;
+  color: #ffffff;
 }
 
 .master_panel {
@@ -188,7 +201,8 @@ input {
   align-items: center;
   height: 3rem;
   line-height: 3rem;
-  padding-top: 4rem;
+  padding: 4rem;
+  border-top: 1px solid #d4d4d4;
 }
 
 .copyright__image {
