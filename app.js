@@ -119,13 +119,13 @@ fontColorBtn.addEventListener('click', ChangefontColor);
 const ChangefontSize = function (event) {
   previewContent.forEach(e => {
     if (event.target.classList.contains('selected')) {
-      previewTitle.style.fontSize = '2.9rem';
+      previewTitle.style.fontSize = '2.8rem';
       previewSubtitle.style.fontSize = '1.2rem';
       previewSubject.style.fontSize = '1.2rem';
     } else {
-      previewTitle.style.fontSize = '3.5rem';
-      previewSubtitle.style.fontSize = '1.5rem';
-      previewSubject.style.fontSize = '1.5rem';
+      previewTitle.style.fontSize = '3.2rem';
+      previewSubtitle.style.fontSize = '1.4rem';
+      previewSubject.style.fontSize = '1.4rem';
     }
   });
 };
@@ -150,8 +150,8 @@ const componentBtn = document.querySelectorAll('.component_optionBtn');
 
 const changComponentOption = function (e) {
   if (e.target.classList.contains('field_type__option2')) {
-    previewSubtitle.style.opacity = 1;
-    previewSubject.style.opacity = 0;
+    previewSubtitle.style.opacity = 0;
+    previewSubject.style.opacity = 1;
   } else if (e.target.classList.contains('field_type__option1')) {
     previewSubtitle.style.opacity = 0;
     previewSubject.style.opacity = 0;
@@ -203,9 +203,9 @@ const resetFontStyle = () => {
   });
 
   previewSubtitle.style.borderTop = '1px solid #ffffff';
-  previewTitle.style.fontSize = '3.5rem';
-  previewSubtitle.style.fontSize = '1.5rem';
-  previewSubject.style.fontSize = '1.5rem';
+  previewTitle.style.fontSize = '3.2rem';
+  previewSubtitle.style.fontSize = '1.4rem';
+  previewSubject.style.fontSize = '1.4rem';
 };
 
 const option3 = document.querySelector('.field_type__option3');
@@ -245,6 +245,7 @@ const captureExport = function () {
     letterRendering: 1,
     logging: true,
     allowTaint: false,
+    scale: 2,
     scrollX: -window.scrollX,
     scrollY: -window.scrollY,
     windowWidth: document.documentElement.offsetWidth,
