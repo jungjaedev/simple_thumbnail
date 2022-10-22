@@ -1,7 +1,6 @@
 'use strict';
 
 /** input */
-
 const inputsField = document.querySelectorAll('.inputs__field');
 
 const updateInputValue = function (e) {
@@ -64,10 +63,10 @@ gradientBtn.addEventListener('click', changeToGradient);
 const importImage = function () {
   const regex =
     /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(:[0-9]+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/;
-  let imgUrl = prompt('이미지 주소를 입력하세요 😇');
+  let imgUrl = prompt('Please write the Image url.');
   if (imgUrl === null) return;
   if (!imgUrl.match(regex)) {
-    alert('올바르지 않은 URL입니다 😨');
+    alert('Please check the url again.');
     return;
   }
 
@@ -83,3 +82,66 @@ const importImage = function () {
 };
 
 importImageBtn.addEventListener('click', importImage);
+
+/** font style */
+const previewTitle = document.querySelector('.title');
+const previewSubtitle = document.querySelector('.subtitle');
+const previewSubject = document.querySelector('.subject');
+const previewContent = document.querySelectorAll('.preview_content');
+const fontShadowBtn = document.querySelector('.font__shadow');
+const fontColorBtn = document.querySelector('.font__color');
+const fontSizeBtn = document.querySelector('.font__size');
+const fontBtnsContainer = document.querySelector('.font_btns');
+const fontBtn = document.querySelectorAll('.font__btn');
+
+fontBtn.forEach(e => {
+  e.addEventListener('click', e => {
+    const target = e.target;
+    target.classList.toggle('selected');
+  });
+});
+
+// font size
+const ChangefontColor = event => {
+  previewContent.forEach(e => {
+    if (event.target.classList.contains('selected')) {
+      e.style.color = '#000000';
+      previewSubtitle.style.borderTop = '1px solid #000000';
+    } else {
+      e.style.color = '#ffffff';
+      previewSubtitle.style.borderTop = '1px solid #ffffff';
+    }
+  });
+};
+
+fontColorBtn.addEventListener('click', ChangefontColor);
+
+// font size
+const ChangefontSize = function (event) {
+  previewContent.forEach(e => {
+    if (event.target.classList.contains('selected')) {
+      previewTitle.style.fontSize = '2.9rem';
+      previewSubtitle.style.fontSize = '1.2rem';
+      previewSubject.style.fontSize = '1.2rem';
+    } else {
+      previewTitle.style.fontSize = '3.5rem';
+      previewSubtitle.style.fontSize = '1.5rem';
+      previewSubject.style.fontSize = '1.5rem';
+    }
+  });
+};
+
+fontSizeBtn.addEventListener('click', ChangefontSize);
+
+// font shadow
+const ChangefontShadow = function (event) {
+  previewContent.forEach(e => {
+    if (event.target.classList.contains('selected')) {
+      e.style.textShadow = '2px 2px 4px rgba(0,0,0,0.4)';
+    } else {
+      e.style.textShadow = '';
+    }
+  });
+};
+
+fontShadowBtn.addEventListener('click', ChangefontShadow);
