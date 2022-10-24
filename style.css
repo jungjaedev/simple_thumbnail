@@ -84,6 +84,7 @@ header h1 {
   aspect-ratio: 16/9;
   background-color: #d4d4d4;
   font-family: 'Pretendard-Regular';
+  overflow: hidden;
 }
 
 .content_list {
